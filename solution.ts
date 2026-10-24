@@ -20,6 +20,7 @@ console.log(staircase(4));
 //*-------------------------------
 //*   Problem 2: Grading Students
 //*-------------------------------
+
 var gradingStudents = function (grades: number[]): number[] {
   const newGrades = grades.map((grade) => {
     if (grade >= 38) {
@@ -36,3 +37,24 @@ var gradingStudents = function (grades: number[]): number[] {
 };
 
 console.log(gradingStudents([73, 67, 38, 33]));
+
+//*-------------------------------
+//*   Problem 3: Time Conversion
+//*-------------------------------
+
+var timeConversion = function (s: string): string {
+  const timeParts = s.split(":");
+
+  if (timeParts[0] === "12") {
+    if (timeParts[2].slice(2, 4) === "AM") {
+      timeParts[0] = "00";
+    }
+  } else if (timeParts[2].slice(2, 4) === "PM") {
+    timeParts[0] = (Number(timeParts[0]) + 12).toString();
+  }
+
+  timeParts[2] = timeParts[2].slice(0, -2);
+  return timeParts.join(":");
+};
+
+console.log(timeConversion("07:05:45PM"));
