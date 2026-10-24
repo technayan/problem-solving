@@ -68,3 +68,19 @@ var repeatStr = function (n: number, s: string): string {
 };
 
 console.log(repeatStr(3, "ha"));
+
+//*-------------------------------
+//*   Problem 5: Reversed Strings
+//*-------------------------------
+
+var solution = function (str: string): string {
+  const strArray: string[] = [];
+
+  for (let i = str.length - 1; i >= 0; i--) {
+    strArray.push(str[i]);
+  }
+
+  return strArray.join("");
+};
+
+console.log(solution("hello"));
