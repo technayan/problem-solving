@@ -1,15 +1,38 @@
 //*-------------------------------
-//*     Problem 1: Staircase
+//*   Problem 1: Staircase
 //*-------------------------------
 
-var staircase = function (n: number) {
+var staircase = function (n: number): string {
+  const structure: string[] = [];
+
   for (let i = 1; i <= n; i++) {
-    let stair = "";
-    for (let j = 1; j <= i; j++) {
-      stair += "#";
-    }
-    console.log(stair);
+    const space = " ".repeat(n - i);
+    const hash = "#".repeat(i);
+
+    structure.push(space + hash);
   }
+
+  return structure.join("\n");
 };
 
-staircase(4);
+console.log(staircase(4));
+
+//*-------------------------------
+//*   Problem 2: Grading Students
+//*-------------------------------
+var gradingStudents = function (grades: number[]): number[] {
+  const newGrades = grades.map((grade) => {
+    if (grade >= 38) {
+      const nextMultipleOfFive = 5 * (Math.floor(grade / 5) + 1);
+
+      if (nextMultipleOfFive - grade < 3) return nextMultipleOfFive;
+      else return grade;
+    } else {
+      return grade;
+    }
+  });
+
+  return newGrades;
+};
+
+console.log(gradingStudents([73, 67, 38, 33]));
