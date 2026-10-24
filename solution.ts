@@ -84,3 +84,21 @@ var solution = function (str: string): string {
 };
 
 console.log(solution("hello"));
+
+//*-------------------------------
+//*   Problem 6: Sum of Positive
+//*-------------------------------
+
+var positiveSum = function (arr: number[]): number {
+  let sum = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 0) {
+      sum += arr[i];
+    }
+  }
+
+  return sum;
+};
+
+console.log(positiveSum([-1, -2, 0, -5]));
