@@ -58,3 +58,13 @@ var timeConversion = function (s: string): string {
 };
 
 console.log(timeConversion("07:05:45PM"));
+
+//*-------------------------------
+//*   Problem 4: String Repeat
+//*-------------------------------
+
+var repeatStr = function (n: number, s: string): string {
+  return s.repeat(n);
+};
+
+console.log(repeatStr(3, "ha"));
