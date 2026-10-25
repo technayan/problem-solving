@@ -210,3 +210,14 @@ var removeDuplicates = function (nums: number[]): number {
 };
 
 console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
+
+//*-------------------------------
+//*   Problem 13: Contains Duplicate
+//*-------------------------------
+
+var containsDuplicate = function (nums: number[]): boolean {
+  const set = new Set(nums);
+  return set.size !== nums.length;
+};
+
+console.log(containsDuplicate([1, 2, 3, 1]));
