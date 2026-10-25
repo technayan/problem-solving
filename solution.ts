@@ -114,3 +114,13 @@ var summation = function (num: number): number {
 };
 
 console.log(summation(5));
+
+//*-------------------------------
+//*   Problem 8: Convert a Boolean to a String
+//*-------------------------------
+
+var booleanToString = function (b: boolean): string {
+  return b ? "true" : "false";
+};
+
+console.log(booleanToString(true));
