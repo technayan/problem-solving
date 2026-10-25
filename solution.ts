@@ -163,3 +163,30 @@ var runningSum = function (nums: number[]): number[] {
 };
 
 console.log(runningSum([1, 2, 3, 4]));
+
+//*-------------------------------
+//*   Problem 11: Richest Customer Wealth
+//*-------------------------------
+
+var maximumWealth = function (accounts: number[][]) {
+  let highest = 0;
+  for (let i = 0; i < accounts.length; i++) {
+    let temp = 0;
+    for (let j = 0; j < accounts[i].length; j++) {
+      temp += accounts[i][j];
+    }
+
+    if (temp > highest) {
+      highest = temp;
+    }
+  }
+
+  return highest;
+};
+
+console.log(
+  maximumWealth([
+    [1, 2, 3],
+    [3, 2, 1],
+  ]),
+);
