@@ -146,3 +146,20 @@ var fizzBuzz = function (n: number): string[] {
 };
 
 console.log(fizzBuzz(5));
+
+//*-------------------------------
+//*   Problem 10: Running Sum of 1D Array
+//*-------------------------------
+
+var runningSum = function (nums: number[]): number[] {
+  let tempSum = 0;
+  const sumArray: number[] = [];
+  for (let i = 0; i < nums.length; i++) {
+    tempSum += nums[i];
+    sumArray.push(tempSum);
+  }
+
+  return sumArray;
+};
+
+console.log(runningSum([1, 2, 3, 4]));
