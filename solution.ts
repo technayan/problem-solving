@@ -101,4 +101,16 @@ var positiveSum = function (arr: number[]): number {
   return sum;
 };
 
-console.log(positiveSum([-1, -2, 0, -5]));
+console.log(positiveSum([1, -4, 7, 12]));
+
+//*-------------------------------
+//*   Problem 7: Grasshopper — Summation
+//*-------------------------------
+
+var summation = function (num: number): number {
+  const sum = (num * (num + 1)) / 2;
+
+  return sum;
+};
+
+console.log(summation(5));
