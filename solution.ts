@@ -358,3 +358,25 @@ var reverseString = function (s: string[]): void {
 };
 
 reverseString(["b", "a", "h", "r", "a", "i", "n"]);
+
+//*-------------------------------
+//*   Problem 19: Length of Last Word
+//*-------------------------------
+
+var lengthOfLastWord = function (s: string): number {
+  let i = s.length - 1;
+  let l = 0;
+
+  while (i >= 0 && s[i] === " ") {
+    i--;
+  }
+
+  while (i >= 0 && s[i] !== " ") {
+    l++;
+    i--;
+  }
+
+  return l;
+};
+
+console.log(lengthOfLastWord("luffy is still joyboy"));
