@@ -278,7 +278,7 @@ merge([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3);
 //*   Problem 16: 3Sum
 //*-------------------------------
 
-var threeSum = function (nums: number[]) {
+var threeSum = function (nums: number[]): number[][] {
   nums.sort((a, b) => a - b);
 
   const result: number[][] = [];
@@ -315,3 +315,26 @@ var threeSum = function (nums: number[]) {
 };
 
 console.log(threeSum([0, 0, 0]));
+
+//*-------------------------------
+//*   Problem 17: Plus One
+//*-------------------------------
+
+var plusOne = function (digits: number[]): number[] {
+  let carry = 1;
+
+  for (let i = digits.length - 1; i >= 0; i--) {
+    if (digits[i] < 9) {
+      digits[i] += carry;
+
+      return digits;
+    } else {
+      digits[i] = 0;
+    }
+  }
+
+  digits.unshift(1);
+  return digits;
+};
+
+console.log(plusOne([1, 2, 9]));
