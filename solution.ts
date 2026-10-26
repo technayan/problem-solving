@@ -226,7 +226,7 @@ console.log(containsDuplicate([1, 2, 3, 1]));
 //*   Problem 14: Move Zeroes
 //*-------------------------------
 
-var moveZeroes = function (nums: number[]) {
+var moveZeroes = function (nums: number[]): void {
   let k = 0;
   let temp = 0;
 
@@ -248,7 +248,12 @@ moveZeroes([0, 1, 0, 3, 12]);
 //*   Problem 15: Merge Sorted Array
 //*-------------------------------
 
-var merge = function (nums1: number[], m: number, nums2: number[], n: number) {
+var merge = function (
+  nums1: number[],
+  m: number,
+  nums2: number[],
+  n: number,
+): void {
   let i = m - 1;
   let j = n - 1;
   let k = m + n - 1;
@@ -268,3 +273,45 @@ var merge = function (nums1: number[], m: number, nums2: number[], n: number) {
 };
 
 merge([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3);
+
+//*-------------------------------
+//*   Problem 16: 3Sum
+//*-------------------------------
+
+var threeSum = function (nums: number[]) {
+  nums.sort((a, b) => a - b);
+
+  const result: number[][] = [];
+
+  for (let i = 0; i < nums.length - 2; i++) {
+    if (i > 0 && nums[i] === nums[i - 1]) {
+      continue;
+    }
+    let j = i + 1;
+    let k = nums.length - 1;
+
+    while (j < k) {
+      if (nums[i] + nums[j] + nums[k] < 0) {
+        j++;
+      } else if (nums[i] + nums[j] + nums[k] > 0) {
+        k--;
+      } else {
+        result.push([nums[i], nums[j], nums[k]]);
+        j++;
+        k--;
+
+        while (j < k && nums[j] === nums[j - 1]) {
+          j++;
+        }
+
+        while (j < k && nums[k] === nums[k + 1]) {
+          k--;
+        }
+      }
+    }
+  }
+
+  return result;
+};
+
+console.log(threeSum([0, 0, 0]));
