@@ -338,3 +338,23 @@ var plusOne = function (digits: number[]): number[] {
 };
 
 console.log(plusOne([1, 2, 9]));
+
+//*-------------------------------
+//*   Problem 18: Reverse String
+//*-------------------------------
+
+var reverseString = function (s: string[]): void {
+  let j = s.length - 1;
+  let temp = "";
+
+  for (let i = 0; i < j; i++) {
+    temp = s[i];
+    s[i] = s[j];
+    s[j] = temp;
+    j--;
+  }
+
+  console.log(s);
+};
+
+reverseString(["b", "a", "h", "r", "a", "i", "n"]);
